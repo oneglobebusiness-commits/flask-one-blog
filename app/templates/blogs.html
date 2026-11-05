@@ -1,0 +1,31 @@
+{% extends "app_layout.html" %}
+{% block title %}{{ page.title }}{% endblock %}
+{% block content %}
+<div class="page-wrap" id="blogsPage" data-kind="{{ page.kind }}" data-empty="{{ page.empty }}" data-empty-hint="{{ page.empty_hint }}">
+  <div class="page-head">
+    <div><h1>{{ page.title }}</h1><p>{{ page.subtitle }}</p></div>
+    <button class="back-btn" id="backBtn" type="button">← Back</button>
+  </div>
+  <div class="stat-row" id="stats" hidden></div>
+  <div class="filters">
+    <input id="search" type="search" placeholder="Search by title or topic..." aria-label="Search blogs">
+    {% if page.kind == 'contents' %}
+    <select id="statusFilter" aria-label="Filter by status">
+      <option value="">All Status</option><option value="COMPLETED">Draft</option><option value="SCHEDULED">Scheduled</option>
+      <option value="PUBLISHED">Published</option><option value="FAILED">Failed</option>
+    </select>
+    {% endif %}
+    <select id="limit" aria-label="Blogs per page">
+      <option value="5">5 per page</option><option value="10" selected>10 per page</option>
+      <option value="20">20 per page</option><option value="50">50 per page</option>
+    </select>
+  </div>
+  <div id="list"></div>
+  <div id="pager"></div>
+</div>
+<div id="editorHost"></div>
+{% endblock %}
+{% block page_scripts %}
+<script src="{{ url_for('static', filename='js/editor.js') }}"></script>
+<script src="{{ url_for('static', filename='js/blogs.js') }}"></script>
+{% endblock %}

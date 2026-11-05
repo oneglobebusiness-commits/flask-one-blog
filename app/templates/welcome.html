@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block styles %}<link rel="stylesheet" href="{{ url_for('static', filename='css/welcome.css') }}">{% endblock %}
+{% block body %}
+<section class="only1-hero">
+  <div class="only1-overlay"></div>
+  <div class="only1-screen active" id="screen1">
+    <div class="only1-content">
+      <h1>The <span>ONLY1</span><br>Dashboard</h1>
+      <p>The ONLY1 dashboard for all small and medium businesses to increase store traffic, increase sales, and rank in AEO, GEO and AI Search.</p>
+      <button class="btn-sweep" id="exploreBtn" type="button">Explore Options <span class="arrow">→</span></button>
+    </div>
+  </div>
+  <div class="only1-screen" id="screen2">
+    <div class="circles-wrapper">
+      <div class="circles-row">
+        <div class="circle-card"><h2>YOUR WAY</h2><p class="highlight">YOU SET<br>PARAMETERS</p></div>
+        <div class="circle-card"><h2>The <span class="num">1</span> WAY</h2><p class="highlight">FULLY<br>AUTOMATED</p></div>
+      </div>
+      <button class="btn-sweep" id="startBtn" type="button">Start Now <span class="arrow">→</span></button>
+    </div>
+  </div>
+</section>
+{% endblock %}
+{% block scripts %}<script src="{{ url_for('static', filename='js/welcome.js') }}"></script>{% endblock %}

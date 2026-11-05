@@ -1,0 +1,50 @@
+{% extends "app_layout.html" %}
+{% block title %}Dashboard{% endblock %}
+{% block page_styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/modals.css') }}">
+{% endblock %}
+{% block content %}
+<div class="lvx-root"><div class="app-main"><div class="stage"><div class="pedal" id="pedal">
+  <div id="knobHint"></div>
+  <div class="panel-grid">
+    <div class="knob-panel">
+      <div class="head-row">
+        <div class="face tile wide-tile">
+          <button type="button" class="hint-replay" id="topHelp" title="Show help">?</button>
+          <div class="duo">
+            <div class="knob-unit" id="previewKnob" role="button" tabindex="0"><div class="knob white" id="kPreview"><div class="pointer"></div></div><span class="label">preview</span></div>
+            <div class="knob-unit" id="generatorKnob" role="button" tabindex="0"><div class="knob white" id="kGenerator"><div class="pointer"></div></div><span class="label">generator</span></div>
+          </div>
+        </div>
+        <div class="screen bv-screen">
+          <div class="scr-corner tl" id="scrMarket">—</div>
+          <div class="scr-corner tr" id="scrLang">EN</div>
+          <div class="kw-col left"><div class="kw-stack" id="scrShort"></div></div>
+          <div class="bv-center">
+            <div class="bv-label">Brand Voice</div>
+            <div class="bv-value" id="scrVoice">—</div>
+            <div class="bv-num" id="scrCount">00</div>
+          </div>
+          <div class="kw-col right"><div class="kw-stack" id="scrLong"></div></div>
+        </div>
+        <div class="face tile" id="campaignKnob" role="button" tabindex="0">
+          <div class="knob-unit"><div class="knob white" id="kMix"><div class="pointer"></div></div><span class="label">Generate</span></div>
+        </div>
+      </div>
+      <div class="knob-row" id="knobRow">
+        <button type="button" class="hint-replay" id="bottomHelp" title="Show help for these knobs">?</button>
+        <span class="arrow l">&#10216;</span><span class="arrow r">&#10217;</span>
+      </div>
+    </div>
+    <div class="foot-row" id="footRow"></div>
+  </div>
+</div></div></div></div>
+<div id="overlayHost"></div>
+<div id="modalHost"></div>
+<div id="blogHost"></div>
+{% endblock %}
+{% block page_scripts %}
+<script src="{{ url_for('static', filename='js/editor.js') }}"></script>
+<script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+{% endblock %}

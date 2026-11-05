@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Blog Studio{% endblock %}
+{% block styles %}<link rel="stylesheet" href="{{ url_for('static', filename='css/landing.css') }}">{% endblock %}
+{% block body %}
+<section class="hero">
+  <canvas id="stars" aria-hidden="true"></canvas>
+  <div class="planet-wrap" id="planet" aria-label="A dark volcanic planet fractured by glowing blue energy.">
+    <div class="inner" id="inner" aria-hidden="true"></div>
+    <div id="glows"></div>
+    <div class="logo-wrap" id="logoWrap"><img class="logo-img" src="{{ url_for('static', filename='img/logo.png') }}" alt="Logo"></div>
+    <div id="frags"></div>
+    <div class="pulse" id="pulse"></div>
+  </div>
+</section>
+{% endblock %}
+{% block scripts %}<script src="{{ url_for('static', filename='js/landing.js') }}"></script>{% endblock %}

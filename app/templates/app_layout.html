@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/nav.css') }}">
+{% block page_styles %}{% endblock %}
+{% endblock %}
+{% block body %}
+<aside class="app-side">
+  <div class="side-title"><span class="sdot"></span> Blog Studio</div>
+  <div class="side-store" id="navStore">
+    <div class="ss-skel" style="width:70%"></div>
+    <div class="ss-skel" style="width:90%"></div>
+  </div>
+  <a class="side-item{{ ' active' if active == 'dashboard' }}" href="/dashboard">🎛️ Dashboard</a>
+  <div class="side-sec">Content</div>
+  <a class="side-item{{ ' active' if active == 'contents' }}" href="/contents">Content Hub</a>
+  <a class="side-item{{ ' active' if active == 'draft' }}" href="/draft">Draft blogs</a>
+  <a class="side-item{{ ' active' if active == 'schedule' }}" href="/schedule">Scheduled blogs</a>
+  <a class="side-item{{ ' active' if active == 'publish' }}" href="/publish">Published blogs</a>
+  <div class="side-sec">Account</div>
+  <a class="side-item{{ ' active' if active == 'billings' }}" href="/billings">💳 Billings</a>
+</aside>
+<div id="marketModal"></div>
+<div class="app-shell">
+{% block content %}{% endblock %}
+</div>
+{% endblock %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/nav.js') }}"></script>
+{% block page_scripts %}{% endblock %}
+{% endblock %}

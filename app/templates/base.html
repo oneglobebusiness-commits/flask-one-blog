@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}Blog Studio{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}">
+  {% block styles %}{% endblock %}
+</head>
+<body>
+  <div class="app-loader" id="appLoader">
+    <div class="loader-box">
+      <div class="loader-ring r1"></div><div class="loader-ring r2"></div>
+      <div class="loader-ring r3"></div><div class="loader-ring r4"></div>
+      <div class="loader-core"></div>
+      <div class="loader-text">Loading</div>
+    </div>
+  </div>
+  {% block body %}{% endblock %}
+  <div class="app-toast" id="appToast" role="status" aria-live="polite"></div>
+  <script src="{{ url_for('static', filename='js/core.js') }}"></script>
+  {% block scripts %}{% endblock %}
+</body>
+</html>

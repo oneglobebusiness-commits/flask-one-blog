@@ -1,0 +1,14 @@
+{% extends "app_layout.html" %}
+{% block title %}Billing & Plans{% endblock %}
+{% block content %}
+<div class="page-wrap">
+  <div class="page-head">
+    <div><h1>💳 Billing &amp; Plans</h1><p>Choose the plan for your blog studio needs</p></div>
+    <button class="back-btn" id="backBtn" type="button">← Back</button>
+  </div>
+  <div class="notice">Online payment isn't connected yet. To change plan, please contact support.</div>
+  <div id="current"></div>
+  <div id="plans"></div>
+</div>
+{% endblock %}
+{% block page_scripts %}<script src="{{ url_for('static', filename='js/billings.js') }}"></script>{% endblock %}
