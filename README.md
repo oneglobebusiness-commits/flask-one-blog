@@ -43,3 +43,4 @@ app/static/     CSS, JavaScript and images
 tests/          run with: pip install -r requirements-dev.txt && pytest
 uploads/        generated hero images (needs a persistent disk)
 ```
+# 1-blog-flask-tech
